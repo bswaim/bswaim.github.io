@@ -1,0 +1,237 @@
+/* Cross Browser Compatability CSS */
+/**
+ * html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
+ * v1.6.1 2010-09-17 | Authors: Eric Meyer & Richard Clark
+ * html5doctor.com/html-5-reset-stylesheet/
+ */
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+blockquote, q { quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after { content: ""; content: none; }
+
+ins { background-color: #ff9; color: #000; text-decoration: none; }
+
+mark { background-color: #ff9; color: #000; font-style: italic; font-weight: bold; }
+
+del { text-decoration: line-through; }
+
+abbr[title], dfn[title] { border-bottom: 1px dotted; cursor: help; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+
+input, select { vertical-align: middle; }
+
+/* write your CSS here */
+
+/*GLOBAL CLASSES*/
+.borderRadiusRounded
+{
+  border-radius:0px 0px 5px 5px;
+}
+
+@primaryColor: #74b2c1; //blue
+@secondaryColor: #796b6b; //brown
+@tertiaryColor: white;
+
+body {
+  color: @tertiaryColor;
+  background-size: 100%;
+  font-family: Quicksand;
+  //font-size: ;
+  background-color:@secondaryColor;
+}
+ h1
+ {
+   font-size: 2em;
+ }
+ p
+ {
+   font-size: 1em;
+ }
+#headBanner
+{
+  padding:20px;
+  background-color: @secondaryColor;
+  color:@tertiaryColor;
+  margin:auto;
+  text-align:center;
+}
+
+#headBanner>div
+{
+  margin-top:10px;
+}
+
+.frame
+{
+  //background:rgba(255, 255, 255, 0.3);
+  border-top:10px solid rgba(255, 255, 255, 0.3);
+  border-right:10px solid rgba(255, 255, 255, 0.1);
+  border-bottom:10px solid rgba(255, 255, 255, 0.15);
+  border-left:10px solid rgba(255, 255, 255, 0.3);
+  //background:@tertiaryColor;
+  //padding:10px;
+  display: table;
+  margin:auto;
+}
+
+.homeContainer
+{
+  background:rgba(255, 255, 255, 0.3);
+  //background:@tertiaryColor;
+  padding:10px;
+  display: table;
+  margin:auto;
+}
+
+.half-width
+{
+  width: 50%;
+}
+
+.pageContainer
+{
+
+  margin:auto;
+  //position:relative;
+  //top: 33px;
+  //text-align:left;
+  color: #654;
+  //width: 1020px;
+  //padding:20px;
+}
+
+#menu
+{
+  //position: fixed;
+  display:inline-block;
+  background:@primaryColor;
+  z-index:2;
+  width:100%;
+  border-bottom: 4px solid #796b6b;
+}
+
+a.menu-link
+{
+  z-index:1;
+  position: fixed;
+  left: 0px;
+  padding:5px 8px;
+  color:@tertiaryColor;
+  cursor: pointer;
+  text-decoration:none;
+  text-transform:uppercase;
+  background-color:@primaryColor;
+}
+
+nav li
+{
+  //margin-bottom:2px;
+  //margin-left:2px;
+  background-color:@primaryColor;
+  padding:6px 8px;
+  text-decoration:none;
+  list-style:none;
+  display:inline;
+  float:left;
+}
+
+nav a
+{
+  padding:5px 8px;
+  color:@tertiaryColor;
+  cursor: pointer;
+  text-decoration:none;
+  text-transform:uppercase;
+}
+
+nav li:hover/*, nav a:hover*/
+{
+  background-color: lightblue;
+  transition: all 0.2s ease-in 0s;
+}
+
+.nav
+{
+  margin-bottom:8px;
+
+}
+
+p
+{
+  font-size: 1.25em;
+}
+
+
+/*HOME PAGE STYLES*/
+
+
+/*ABOUT PAGE STYLES*/
+
+#about .homeImage
+{
+  max-width: 390px;
+  background:white;
+  //padding:10px;
+  //vertical-align: top;
+}
+
+
+#about .half-width.left
+{
+  display: inline-block;
+}
+
+#about .half-width.right
+{
+  display: inline;
+}
+
+/*PROJECTS PAGE STYLING*/
+#projects .tile
+{
+  background: white;
+  color: @secondaryColor;
+  padding:10px;
+  margin:10px;
+  display:inline-block;
+}
+
+#projects a
+{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#projects .tile:hover
+{
+  text-decoration: none;
+  color: @primaryColor;
+  cursor: pointer;
+  outline: 1px solid @primaryColor;
+}
