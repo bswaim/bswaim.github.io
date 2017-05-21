@@ -1,0 +1,140 @@
+/*
+=======================
+Images
+=======================
+*/
+body
+{
+
+}
+#outerBanner
+{
+    margin: auto;
+    /*position:relative;*/
+    /*top:0px;*/
+    /*left:0px;*/
+    height:500px;
+    background-color: lightblue;
+    overflow: hidden;
+    white-space:nowrap;
+    width:1402px;
+}
+#slider
+{
+    position:relative;
+    top: 25px;
+    left: 0px;
+}
+
+a, .button
+{
+    cursor: pointer;
+}
+
+img
+{
+    height: 225px;
+    vertical-align: middle;
+    border-radius: 10px;
+    margin-left:25px;
+}
+
+.activeImage
+{
+    height: 400px;
+    box-shadow: slategray 0px 0px 16px;
+    border-radius: 0px;
+}
+/*
+=======================
+CONTROL BAR and buttons
+=======================
+*/
+#controls
+{
+    position:absolute;
+    bottom:-75px;
+    width: 100%;
+    height:50px;
+    background-color:gray;
+}
+
+#controlsInner
+{
+    position:absolute;
+    left: 42%;
+    height:50px;
+}
+
+.button
+{
+    position: relative;
+    top:4px;
+    margin-left: 18px;
+    background: darkgray;
+    width: 40px;
+    height: 40px;
+    border-radius: 16px;
+    border: 1px solid white;
+    float:left;
+}
+
+.button:hover
+{
+    background: lightgray;
+}
+
+#prevSymbol
+{
+    position: relative;
+    right: 8px;
+    top: 4px;
+    width:0;
+    height:0;
+    border-top: solid 16px transparent;
+    border-bottom: solid 16px transparent;
+    border-left: solid 16px transparent;
+    border-right: solid 16px white;
+    vertical-align: middle;
+}
+
+.pauseSymbol
+{
+    position: relative;
+    left:6px;
+    top:7px;
+    margin-left:6px;
+    width:4px;
+    height: 26px;
+    background: white;
+    /*float:left;*/
+    display:inline-block;
+    border-radius:4px;
+}
+
+#nextSymbol
+{
+    position: relative;
+    left: 14px;
+    top: 4px;
+    width:0;
+    height:0;
+    border-top: solid 16px transparent;
+    border-bottom: solid 16px transparent;
+    border-left: solid 16px white;
+    border-right: solid 16px transparent;
+    vertical-align: middle;
+}
+
+#playSymbol
+{
+    display:none;
+    position: absolute;
+    top:14px;
+    left: 4px;
+    text-align:center;
+    font-family: Arial;
+    font-size: 12px;
+    font-weight:bold;
+    color: white;
+}
