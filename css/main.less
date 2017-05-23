@@ -216,7 +216,6 @@ p
 #projects .tile
 {
   background: white;
-  color: @secondaryColor;
   padding:10px;
   margin:10px;
   display:inline-block;
@@ -226,12 +225,17 @@ p
 {
   text-decoration: underline;
   cursor: pointer;
+  color: @secondaryColor;
+}
+
+#projects a:hover
+{
+  color: @primaryColor;
 }
 
 #projects .tile:hover
 {
   text-decoration: none;
-  color: @primaryColor;
   cursor: pointer;
   outline: 1px solid @primaryColor;
 }
