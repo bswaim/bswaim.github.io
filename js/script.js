@@ -23,7 +23,7 @@ $(document).ready(function() {
     $(".tab").on("click", function()
     {
         $(this).closest("li").css("background-color", "#796b6b");
-        console.log("clicked");
+        //console.log("clicked");
     })
 
 
