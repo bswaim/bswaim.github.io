@@ -21,22 +21,18 @@ body
 
 .numbered.divisbileByThree
 {
-    /*background: #ffffe0;*/
     background: #74b2c1;
     color:white;
 }
 
 .numbered.divisibleByFive
 {
-    /*background: rgb(167, 167, 167);*/
     background: #796b6b;
     color:white;
 }
 
-/*.numbered.divisibleByBoth*/
 .numbered.divisibleByFive.divisbileByThree
 {
-    /*background: rgb(155, 197, 208);*/
     background:#a04747;
     color:white;
     cursor: pointer;

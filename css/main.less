@@ -67,43 +67,36 @@ body {
 }
  h1
  {
-   font-size: 2em;
+   font-size: 1.5em;
  }
  p
  {
    font-size: 1em;
  }
+
+i
+{
+  vertical-align: bottom;
+}
+
+ a
+ {
+  text-decoration:none;
+ }
 #headBanner
 {
-  padding:20px;
-  background-color: @secondaryColor;
+  background-color: @primaryColor;
   color:@tertiaryColor;
-  margin:auto;
-  text-align:center;
-}
-
-#headBanner>div
-{
-  margin-top:10px;
-}
-
-.frame
-{
-  //background:rgba(255, 255, 255, 0.3);
-  border-top:10px solid rgba(255, 255, 255, 0.3);
-  border-right:10px solid rgba(255, 255, 255, 0.1);
-  border-bottom:10px solid rgba(255, 255, 255, 0.15);
-  border-left:10px solid rgba(255, 255, 255, 0.3);
-  //background:@tertiaryColor;
-  //padding:10px;
-  display: table;
-  margin:auto;
+  width:100%;
+  height:40px;
+  margin-bottom: 80px;
+  //position:absolute;
 }
 
 .homeContainer
 {
   display: table;
-  margin:auto;
+  //margin:auto;
 }
 
 .half-width
@@ -111,16 +104,63 @@ body {
   width: 50%;
 }
 
-.pageContainer
+.links
 {
+  position:absolute;
+  top: 10px;
+  right: 10px;
+  padding-left: 110px;
+}
 
-  margin:auto;
-  color: #654;
+.links a
+{
+  margin-left: 20px;
+  color: #fff;
+  //text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 30px;
+}
+
+.links i
+{
+  color: @tertiaryColor;
+  white-space: nowrap;
+  line-height: 30px;
+}
+
+.links a:hover
+{
+  text-decoration:underline;
+}
+
+.welcome
+{
+  padding:10px;
+  padding-top:20px;
+}
+
+.logo{
+  margin-right:20px;
+  position:absolute;
+  left:10px;
+  top:10px;
+  float:left;
+}
+
+@media screen and (max-width: 600px)
+{
+  .welcome{
+    padding:10px;
+    position:static;
+  }
+
+  .logo{
+    float:none;
+  }
 }
 
 #menu
 {
-  //position: fixed;
   display:inline-block;
   background:@primaryColor;
   z-index:2;
@@ -143,8 +183,6 @@ a.menu-link
 
 nav li
 {
-  //margin-bottom:2px;
-  //margin-left:2px;
   background-color:@primaryColor;
   padding:6px 8px;
   text-decoration:none;
@@ -179,32 +217,7 @@ p
   font-size: 1.25em;
 }
 
-
-/*HOME PAGE STYLES*/
-
-
-/*ABOUT PAGE STYLES*/
-
-#about .homeImage
-{
-  max-width: 390px;
-  background:white;
-  //padding:10px;
-  //vertical-align: top;
-}
-
-
-#about .half-width.left
-{
-  display: inline-block;
-}
-
-#about .half-width.right
-{
-  display: inline;
-}
-
-/*PROJECTS PAGE STYLING*/
+/*PROJECTS STYLING*/
 #projects .tile
 {
   background: white;
@@ -215,7 +228,7 @@ p
 
 #projects a
 {
-  text-decoration: underline;
+  text-decoration: none;
   cursor: pointer;
   color: @secondaryColor;
 }
@@ -227,7 +240,7 @@ p
 
 #projects .tile:hover
 {
-  text-decoration: none;
+  text-decoration: underline;
   cursor: pointer;
   outline: 1px solid @primaryColor;
 }

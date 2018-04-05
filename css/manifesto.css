@@ -1,38 +1,43 @@
+body
+{
+	color: #482b11;
+	background: url(../images/red.jpg);
+}
+
+.float-left
+{
+	float:left;
+}
+
+.float-right
+{
+	float:right;
+}
+
+.clear
+{
+	clear:both;
+}
 
 .manifesto
 {
-	/*width:390px;*/
-	/*height:590px;*/
-	/*padding-left:10px;*/
-	/*padding-top:10px;*/
 	background:white;
-	padding:10px;
+	padding: 15px 10px 0px 15px;
 	text-align: left;
 	width: 390px;
 	height: 610px;
 	display:inline-block;
-}
-.manifesto2
-{
-	/*width:390px;*/
-	/*height:590px;*/
-	/*padding-left:10px;*/
-	/*padding-top:10px;*/
-	background:white;
-	padding:10px;
-	/*text-align: left;*/
-	width: 390px;
-	height: 610px;
-	float:left;
-	/*display:table-cell;*/
+	border: solid 10px black;
+	outline: solid white 1px;
+	box-shadow: 4px 4px 15px 1px black;
 }
 
-@media only screen and (max-width: 889px)
+#manifesto.pageContainer
 {
-	.manifesto2
-	{
-		float:none;
-	}
+	padding-top:20px;
+	display: table;
+	text-align:center;
+	width:100%;
 }
 
 #manifesto span
@@ -44,11 +49,8 @@
 {
 	display: block;
 }
-/*@media screen and (max-width: 1045px)*/
-/*{*/
 
-/*}*/
-
+/*SIZES*/
 .small
 {
 	font-size:12px;
@@ -85,24 +87,10 @@
 	line-height:54px;
 }
 
-.float-left
-{
-	float:left;
-}
-
-.float-right
-{
-	float:right;
-}
-
-.clear
-{
-	clear:both;
-}
-
+/*COLORS*/
 .blue
 {
-	color:#93D3E1;
+	color:#328b90;
 }
 
 .brown
@@ -110,6 +98,7 @@
 	color:brown;
 }
 
+/*FONTS*/
 .font-c
 {
 	font-family: 'Cinzel';
