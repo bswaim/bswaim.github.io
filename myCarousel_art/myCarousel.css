@@ -1,20 +1,28 @@
-/*
-=======================
-Images
-=======================
-*/
 body
 {
     font-family: "Quicksand";
+    margin:0;
+}
+
+a
+{
+    cursor: pointer;
+}
+
+img
+{
+    height: 200px;
+    vertical-align: middle;
+    border-radius: 10px;
+    margin-left:25px;
 }
 
 .outerBanner
 {
-    margin: auto;
+    margin: 8px;
     margin-bottom: 20px;
     background-color: lightblue;
     overflow: hidden;
-    width:1402px;
 }
 
 .title
@@ -34,32 +42,61 @@ body
     white-space:nowrap;
 }
 
-a, .button
-{
-    cursor: pointer;
-}
-
-img
-{
-    height: 200px;
-    vertical-align: middle;
-    border-radius: 10px;
-    margin-left:25px;
-}
-
 .activeImage
 {
     height: 400px;
     box-shadow: slategray 0px 0px 16px;
     border-radius: 0px;
-}
-#graphicDesign .activeImage
-{
-    height: 600px;
+    cursor:pointer;
 }
 /*
 =======================
-CONTROL BAR and buttons
+LARGE IMAGES VIEW
+=======================
+*/
+.image-large
+{
+    position:fixed;
+    display:block;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width:auto;
+    height:auto;
+    max-width: 90%;
+    max-height: 90%;
+    z-index: 100;
+    box-shadow: none;
+    margin:auto;
+}
+
+.button-close
+{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    font-size: 40px;
+    background: 0 0;
+    border: none;
+    color: #fff;
+    font-weight: 100;
+    font-family: Roboto;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: black;
+    z-index: 2;
+    opacity: 0.75;
+}
+
+/*
+=======================
+CONTROL BAR and BUTTONS
 =======================
 */
 .controls
@@ -82,6 +119,7 @@ CONTROL BAR and buttons
     border-radius: 25px;
     border: 2px solid white;
     display:inline-block;
+    cursor: pointer;
 }
 
 .button:hover

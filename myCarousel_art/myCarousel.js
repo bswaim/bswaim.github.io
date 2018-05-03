@@ -1,41 +1,98 @@
-$(document).ready()
-{
-    //add images to containers
+$(document).ready(function() {
     $totalArtImages = 9;
     $totalDesignImages = 13;
 
-    for(var i=1; i<=$totalArtImages; i++)
-    {
-        $source = 'images/art/img'+i;
-        $link = $('<img src='+$source+'.jpg>');
+    for (var i = 1; i <= $totalArtImages; i++) {
+        $source = 'images/art/img' + i;
+        $link = $('<img src=' + $source + '.jpg>');
         $link.clone().appendTo($('#art .slider'));
     }
 
-    for(var j=1; j<=$totalDesignImages; j++)
-    {
-        $source = 'images/graphicDesign/img'+j;
-        $link = $('<img src='+$source+'.jpg>');
+    for (var j = 1; j <= $totalDesignImages; j++) {
+        $source = 'images/graphicDesign/img' + j;
+        $link = $('<img src=' + $source + '.jpg>');
         $link.clone().appendTo($('#graphicDesign .slider'));
     }
+
+    var toggleButton = function (button) {
+        if (button.find('.playSymbol.isActive').length > 0) {
+            button.removeClass('pause');
+            button.addClass('play');
+
+            button.find('.playSymbol').css('display', 'block');
+            button.find('.playSymbol').removeClass('isActive');
+            button.find('.pauseSymbol').css('display', 'none');
+        }
+        else {
+            button.removeClass('play');
+            button.addClass('pause');
+
+            button.find('.playSymbol').css('display', 'none');
+            button.find('.pauseSymbol').css('display', 'inline-block');
+            button.find('.playSymbol').addClass('isActive');
+            clearInterval($automation);
+            $automation = setInterval(automationFunction, $delay);
+        }
+    };
+
+    var bindImgClick = function ()
+    {
+
+        var activeImage = $('.activeImage');
+
+        $('img').on('click', function (e)
+        {
+            if ($(e.target).hasClass('activeImage'))
+            {
+                var activeImage = $(e.target);
+                viewImage(activeImage);
+            }
+            else
+            {
+
+                $(e.target).siblings('img.activeImage').removeClass('activeImage');
+                $(e.target).addClass('activeImage');
+            }
+        });
+    };
+
+    bindImgClick();
+
+    var pausePlayer = function () {
+        var pauseButton = $('.pause');
+        pauseButton.click();
+    };
+
+    var viewImage = function (activeImage) {
+        var container = $('<div class="largeImageContainer"></div>');
+        var overlay = $('<div class="overlay"></div>');
+        var image = activeImage.clone();
+        var close = $('<button class="button-close">X</button>');
+
+        image.addClass('image-large');
+        container.prependTo('html');
+        image.appendTo(container);
+        close.appendTo(container);
+        overlay.appendTo(container);
+
+        $('.overlay').add('.button-close').on('click', function () {
+            var closeButton = $(this);
+            closeLargeImage(closeButton);
+        });
+
+        pausePlayer();
+    };
+
+    var closeLargeImage = function (closeButton) {
+        closeButton.parent().remove();
+    };
 
     //add active classes
     $('.playSymbol').addClass('isActive');
 
-    $('.outerBanner').each(function(){
+    $('.outerBanner').each(function () {
         $(this).find('img').eq(1).addClass('activeImage');
     });
-
-    $('img').on('click', function(e)
-    {
-
-        if($(e.target).not('activeImage'))
-        {
-            $(e.target).siblings('img.activeImage').removeClass('activeImage');
-            $(e.target).addClass('activeImage');
-        }
-
-    });
-
 
     //every four seconds, move to next image, if no interaction from user
     $delay = 4000;
@@ -68,24 +125,12 @@ $(document).ready()
                 clearInterval($automation);
                 $automation = setInterval(automationFunction, $delay);
             }
-
         });
 
-    $('.pause').on('click', function()
+    $('.pause').add('.play').on('click', function()
     {
-        if($(this).find('.playSymbol.isActive').length>0)
-        {
-            $(this).find('.playSymbol').css('display', 'block');
-            $(this).find('.playSymbol').removeClass('isActive');
-            $(this).find('.pauseSymbol').css('display', 'none');
-
-        }
-        else
-        {
-            $(this).find('.playSymbol').css('display', 'none');
-            $(this).find('.pauseSymbol').css('display', 'inline-block');
-            $(this).find('.playSymbol').addClass('isActive');
-            $automation = setInterval(automationFunction, $delay);
-        }
+        var button = $(this);
+        toggleButton(button);66
     });
-}
+
+});
